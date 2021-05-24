@@ -1,0 +1,48 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.root-containter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+
+.irc-wrapper {
+  width: 400px;
+  height: 600px;
+  border: 1px black solid;
+}
+
+.irc-chat {
+  width: 100%;
+  height: 93%;
+  background-color: #eee;
+}
+
+.irc-input {
+  width: 100%;
+  height: 7%;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top: 1px solid #888;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+.irc-input:focus {
+  outline: none;
+  background-color: lightblue;
+}
+
+footer {
+  width: 100%;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+}
