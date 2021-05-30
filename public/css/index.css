@@ -64,3 +64,17 @@ body {
 .nick {
   font-style: italic;
 }
+
+.color_wrapper {
+  border: black 1px solid;
+  border-radius: 10px;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 100px;
+  left: 50px;
+}
