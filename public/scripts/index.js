@@ -1,6 +1,6 @@
 class Chat {
   constructor() {
-    this.nick = 'konrad';
+    this.nick = prompt('Podaj swoją nazwę');
     this.input = document.querySelector('.irc-input');
     this.chat = document.querySelector('.irc-chat');
     this.color = '#';
