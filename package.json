@@ -5,7 +5,7 @@
   },
   "name": "irc",
   "version": "1.0.0",
-  "main": "./www/server.js",
+  "main": "www/server.js",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.27.0",
@@ -21,6 +21,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon --quiet www/server.js",
+    "start": "node www/server.js",
     "git:commit": "git add . && git commit"
   },
   "author": "",
