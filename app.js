@@ -20,22 +20,37 @@ app.get('/', (req, res) => {
 
 const addMessage = (message) => {
   const { content, nick, color } = message;
+  const messageId = messages.length === 0 ? 0 : messages[messages.length - 1].id + 1;
   const infomationOfMessage = {
-    id: messages.length,
+    id: messageId,
     content,
     nick,
     color,
   };
   messages.push(infomationOfMessage);
+  if (messages.length > 60) {
+    messages.shift();
+  }
 };
 
 app.get('/query/:id', (request, response) => {
-  const lastMessageId = request.params.id === 'null' ? messages.length - 1 : request.params.id;
+  let lastMessageId;
+  const countOfMessages = messages.length;
+  if (request.params.id === 'null') {
+    if (countOfMessages === 0) {
+      lastMessageId = -1;
+    } else if (countOfMessages !== 0) {
+      lastMessageId = messages[countOfMessages - 1].id;
+    }
+  } else if (request.params.id !== 'null') {
+    lastMessageId = request.params.id;
+  }
   const messageObject = {
     lastMessageId,
     response,
   };
   polls.push(messageObject);
+  console.log(polls.length);
 });
 
 app.post('/message', (require, response) => {
@@ -53,13 +68,14 @@ app.post('/message', (require, response) => {
     polls.forEach((poll) => {
       const { lastMessageId } = poll;
       const pollResponse = poll.response;
-
       let messagesToSend = messages.filter((messageElement) => {
         return messageElement.id > lastMessageId;
       });
       try {
         messagesToSend = JSON.stringify(messagesToSend);
         pollResponse.send(messagesToSend);
+        console.log(messagesToSend);
+        console.log('udało się odesłać');
       } catch (e) {
         const error = new Error(e);
       }

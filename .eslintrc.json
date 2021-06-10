@@ -12,7 +12,12 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "ignorePatterns": ["public/css/jquery.cssemoticons.css" , "public/scripts/emoticons/jquery.cssemoticons.js"],
+  "ignorePatterns": [
+    "public/css/jquery.cssemoticons.css",
+    "public/scripts/emoticons/jquery.cssemoticons.js",
+    "public/scripts/jquery.nicescroll.js",
+    "public/scripts/jquery.js"
+  ],
   "parser": "babel-eslint",
   "rules": {
     "prettier/prettier": ["error"],
