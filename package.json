@@ -5,7 +5,7 @@
   },
   "name": "irc",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "./www/server.js",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.27.0",
